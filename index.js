@@ -13,7 +13,6 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-// TODO: рефакторить
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
@@ -52,17 +51,3 @@ async function invokeAction({ action, id, name, email, phone }) {
 }
 
 invokeAction(argv);
-
-// перевірка
-// (async () => {
-//   try {
-//     await contactsOperations.removeContact(12);
-//     // console.log(a);
-//     const q = await contactsOperations.listContacts();
-//     console.log(q);
-//     // const r = await contactsOperations.getContactById(3);
-//     // console.log(r);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// })();
